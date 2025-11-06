@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>Ludo Game</title>
+    <link rel="stylesheet" href="ludo.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Ludo Game</h1>
+        
+        <!-- Player Selection Screen -->
+        <div id="playerSelection" class="player-selection">
+            <h2>Select Number of Players</h2>
+            <div class="player-count-options">
+                <button class="player-count-btn" data-players="2">2 Players</button>
+                <button class="player-count-btn" data-players="3">3 Players</button>
+                <button class="player-count-btn" data-players="4">4 Players</button>
+            </div>
+            
+            <div id="colorSelection" class="color-selection" style="display: none;">
+                <h3>Select Colors for Each Player</h3>
+                <div id="colorSelectionContainer"></div>
+                <button id="startGameBtn" class="start-game-btn">Start Game</button>
+            </div>
+        </div>
+
+        <!-- Game Board -->
+        <div id="gameBoard" class="game-board" style="display: none;">
+            <!-- Game Info Panel -->
+            <div class="game-info">
+                <div class="current-player-info">
+                    <h3>Current Player: <span id="currentPlayerName"></span></h3>
+                    <div id="currentPlayerIndicator" class="player-indicator"></div>
+                </div>
+                <div class="dice-container">
+                    <div id="dice" class="dice">
+                        <div class="dice-face">?</div>
+                    </div>
+                    <button id="rollDiceBtn" class="roll-btn">Roll Dice</button>
+                    <div id="diceResult" class="dice-result"></div>
+                </div>
+                <div class="game-status">
+                    <p id="gameMessage"></p>
+                </div>
+            </div>
+
+            <!-- Ludo Board -->
+            <div class="board">
+                <!-- Red Home Area -->
+                <div class="home-area red-home" data-color="red">
+                    <div class="home-title">RED</div>
+                    <div class="home-pieces">
+                        <div class="piece red-piece" data-piece="red-0" data-position="-1"></div>
+                        <div class="piece red-piece" data-piece="red-1" data-position="-1"></div>
+                        <div class="piece red-piece" data-piece="red-2" data-position="-1"></div>
+                        <div class="piece red-piece" data-piece="red-3" data-position="-1"></div>
+                    </div>
+                </div>
+
+                <!-- Green Home Area -->
+                <div class="home-area green-home" data-color="green">
+                    <div class="home-title">GREEN</div>
+                    <div class="home-pieces">
+                        <div class="piece green-piece" data-piece="green-0" data-position="-1"></div>
+                        <div class="piece green-piece" data-piece="green-1" data-position="-1"></div>
+                        <div class="piece green-piece" data-piece="green-2" data-position="-1"></div>
+                        <div class="piece green-piece" data-piece="green-3" data-position="-1"></div>
+                    </div>
+                </div>
+
+                <!-- Path Grid -->
+                <div class="path-grid">
+                    <!-- This will be populated by JavaScript -->
+                </div>
+
+                <!-- Yellow Home Area -->
+                <div class="home-area yellow-home" data-color="yellow">
+                    <div class="home-title">YELLOW</div>
+                    <div class="home-pieces">
+                        <div class="piece yellow-piece" data-piece="yellow-0" data-position="-1"></div>
+                        <div class="piece yellow-piece" data-piece="yellow-1" data-position="-1"></div>
+                        <div class="piece yellow-piece" data-piece="yellow-2" data-position="-1"></div>
+                        <div class="piece yellow-piece" data-piece="yellow-3" data-position="-1"></div>
+                    </div>
+                </div>
+
+                <!-- Blue Home Area -->
+                <div class="home-area blue-home" data-color="blue">
+                    <div class="home-title">BLUE</div>
+                    <div class="home-pieces">
+                        <div class="piece blue-piece" data-piece="blue-0" data-position="-1"></div>
+                        <div class="piece blue-piece" data-piece="blue-1" data-position="-1"></div>
+                        <div class="piece blue-piece" data-piece="blue-2" data-position="-1"></div>
+                        <div class="piece blue-piece" data-piece="blue-3" data-position="-1"></div>
+                    </div>
+                </div>
+
+                <!-- Center Star -->
+                <div class="center-star">
+                    <div class="star">★</div>
+                </div>
+            </div>
+
+            <button id="resetGameBtn" class="reset-btn">Reset Game</button>
+        </div>
+    </div>
+
+    <script src="ludo.js"></script>
+</body>
+</html>
